@@ -1,0 +1,12 @@
+# Ignore VSCode AI rules
+.github/instructions/codacy.instructions.md
+
+# Ignore sensitive files
+login_testcases.json
+EnvConfig.java
+BrowserConfig.java
+URLs.java
+
+# Ignore build and test folders
+target/
+test-output/

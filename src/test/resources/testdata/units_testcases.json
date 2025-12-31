@@ -1,0 +1,32 @@
+[
+    {
+        "testCaseId": "UNIT_001",
+        "testCaseName": "Create Residential Unit",
+        "description": "Test creating a residential unit",
+        "unitName": "Residential-Unit-001",
+        "unitType": "Residential",
+        "unitDescription": "Luxury residential apartment with 3 bedrooms",
+        "expectedResult": "Unit should be created successfully",
+        "shouldPass": true
+    },
+    {
+        "testCaseId": "UNIT_002",
+        "testCaseName": "Create Commercial Unit",
+        "description": "Test creating a commercial unit",
+        "unitName": "Commercial-Unit-001",
+        "unitType": "Commercial",
+        "unitDescription": "Office space in business district",
+        "expectedResult": "Unit should be created successfully",
+        "shouldPass": true
+    },
+    {
+        "testCaseId": "UNIT_003",
+        "testCaseName": "Create Industrial Unit",
+        "description": "Test creating an industrial unit",
+        "unitName": "Industrial-Unit-001",
+        "unitType": "Industrial",
+        "unitDescription": "Warehouse facility with loading dock",
+        "expectedResult": "Unit should be created successfully",
+        "shouldPass": true
+    }
+]

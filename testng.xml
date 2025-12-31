@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Selenium Test Automation Suite" parallel="tests" thread-count="3" verbose="1">
+    
+    <parameter name="browser" value="chrome"/>
+    
+    <listeners>
+        <!-- Add listeners here if needed -->
+    </listeners>
+    
+    <test name="Login Tests" preserve-order="true">
+        <classes>
+            <class name="com.ui.tests.LoginTest"/>
+        </classes>
+    </test>
+    
+    <test name="Units Tests" preserve-order="true">
+        <classes>
+            <class name="com.ui.tests.UnitsTest"/>
+        </classes>
+    </test>
+    
+    <test name="Finance E2E Tests" preserve-order="true">
+        <classes>
+            <class name="com.ui.tests.FinanceE2ETest"/>
+        </classes>
+    </test>
+    
+</suite>

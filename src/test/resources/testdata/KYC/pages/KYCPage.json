@@ -1,0 +1,14 @@
+{
+        "id":"kyc_page_001",
+        "type":"customer",
+
+        "title":{
+            "en":"Know Your Customer",
+            "ar":"اعرف عميلك"
+        },
+
+        "description":{
+            "en":"Please complete the KYC form to proceed.",
+            "ar":"يرجى إكمال نموذج اعرف عميلك للمتابعة."
+        }
+}
