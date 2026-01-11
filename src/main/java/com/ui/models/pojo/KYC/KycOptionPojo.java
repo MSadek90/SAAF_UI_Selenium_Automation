@@ -1,24 +1,22 @@
 package com.ui.models.pojo.KYC;
-
-
 import java.util.List;
 
 import com.ui.models.pojo.KYC.WrapperClasses.KycLabelNestedPojo;
-import com.ui.models.pojo.KYC.WrapperClasses.kycQuestionsNestedPojo;
 
-public class KycOptionsPojo {
+
+public class KycOptionPojo {
 
     
     private String optionId;
     private KycLabelNestedPojo label;
-    private List<kycQuestionsNestedPojo> questions;
+    private List<KycQuestionPojo> questions;
 
 
-    public List<kycQuestionsNestedPojo> getQuestions() {
+    public List<KycQuestionPojo> getQuestions() {
         return questions;
     }
 
-    public void setQuestions(List<kycQuestionsNestedPojo> questions) {
+    public void setQuestions(List<KycQuestionPojo> questions) {
         this.questions = questions;
     }
 
@@ -31,7 +29,7 @@ public class KycOptionsPojo {
         this.label = label;
     }
 
-    public String getOptionId_() {
+    public String getOptionId() {
         return optionId;
     }
 

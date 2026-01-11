@@ -9,7 +9,7 @@ public class KycQuestionPojo {
     
 
     private String questionId;
-    private List<KycOptionsPojo> options;
+    private List<KycOptionPojo> options;
     private String type;
     private KycLabelNestedPojo label;
 
@@ -46,12 +46,12 @@ public class KycQuestionPojo {
 
 
 
-    public List<KycOptionsPojo> getOptions() {
+    public List<KycOptionPojo> getOptions() {
         return options;
     }
 
 
-    public void setOptions(List<KycOptionsPojo> options) {
+    public void setOptions(List<KycOptionPojo> options) {
         this.options = options;
     }
 

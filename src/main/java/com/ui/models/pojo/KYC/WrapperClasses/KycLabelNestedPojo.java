@@ -25,11 +25,7 @@ public class KycLabelNestedPojo {
     public void setEn(String en) {
         this.en = en;
     }
-    public KycLabelNestedPojo getLabel() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getLabel'");
-    }
-
+    
     
 
 }

@@ -6,6 +6,6 @@ import com.ui.utils.TestDataLoader;
 public class LoginLoadData {
 
     public static LoginPojo getLoginData() {
-        return TestDataLoader.loadSingleTestData("/login_testcases.json", LoginPojo.class);
+        return TestDataLoader.loadDataFromJsonFiles("src/test/resources/testdata/login_testcases.json", LoginPojo.class);
     }
 }

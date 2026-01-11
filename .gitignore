@@ -2,7 +2,9 @@
 .github/instructions/codacy.instructions.md
 
 # Ignore sensitive files
-
+login_testcases.json
+env.properties
+config/
 # Ignore build and test folders
 target/
 test-output/

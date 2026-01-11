@@ -3,89 +3,190 @@ package com.ui.actions.KYC;
 
 
 import java.util.List;
+
 import org.openqa.selenium.WebDriver;
-import com.ui.models.pojo.KYC.KycOptionsPojo;
+import com.ui.models.pojo.KYC.KycOptionPojo;
 import com.ui.models.pojo.KYC.KycQuestionPojo;
-import com.ui.models.pojo.KYC.WrapperClasses.kycQuestionsNestedPojo;
 import com.ui.pages.KYC.NewPage.KYCAddNewPage;
+
 
 public class KYCQuestionActions {
     
 
+   
+    //For Questions Locators
+    int questionTemp = 1, questionTemp2 = 0 ;
+    //For Options Locators
+    int optionTemp = 1, optionTemp2 = 0 ;
+    // For Nested Options
+    int optionFlag = 0 ;
+
+
     WebDriver driver;
     KYCAddNewPage kycAddNewPage = new KYCAddNewPage(driver);
 
+
+    /*
+      Constructor
+     */
+    
     public KYCQuestionActions(KYCAddNewPage Page) {
         this.kycAddNewPage = Page;
     }
 
+
+
+    /*
+
+    private helper functions 
+    
+    */
+    private void fillOneQuestionMainFields(KycQuestionPojo kycQuestionPojo, int questionIndex) throws InterruptedException{
+    
+          kycAddNewPage
+                    .DropdownListTypeQuestion(questionIndex)
+                    .fillEnglishQuestion(questionIndex, kycQuestionPojo.getLabel().getEn())
+                    .fillArabicQuestion(questionIndex, kycQuestionPojo.getLabel().getAr());
+
+    }
+
+    
+    private void addOptions(KycOptionPojo kycOptionPojo, int optionIndex){
+
+        kycAddNewPage
+        .fillEnglishOption(optionIndex, kycOptionPojo.getLabel().getEn())
+        .fillArabicOption(optionIndex, kycOptionPojo.getLabel().getAr());
+    }
+
+
+    private void clickEyeIcon(int questionTemp){
+        kycAddNewPage
+        .clickOnEyeIcon(questionTemp);
+    }
+
+
+    private void addNewoption(int optionIndex)
+    {
+        kycAddNewPage
+        .clickAddOptionButtonForMultiQuestions(optionIndex);
+    }
+
+
+    private void addNewQuestionbutton(){
+        kycAddNewPage
+        .clickAddByNewInputButton();
+    }
+
+    private void clickAddNestedQuestionsInOptions(int index){
+        kycAddNewPage
+        .clickAddNestedQuestionsInOption(index);
+    }
+
+
+
+    
    
 
-    public void addNewQuestion(kycQuestionsNestedPojo kycQuestionsNestedPojo) throws InterruptedException {
 
-       List <KycQuestionPojo> questionPojos = kycQuestionsNestedPojo.getQuestions();
-       int temp = 1;
+    /*
+
+     Main Function To add Questions Per page 
+
+    */
+    
+        
+
+    public void addQuestionsPerPage(List<KycQuestionPojo>questions) throws InterruptedException{
+        
+
+        System.out.println("question_Temp is: " + questionTemp);
+        System.out.println("option_Temp is: " + optionTemp);
+
+       
+      
 
 
-       //Select Drop Down List 
-       // Then Fill First Question
+        
+        
 
-        for(int index = 0, index2= index + 1; index < questionPojos.size(); index++,index2++) {
+        // Loop on questions with questionTemp (Locators Start from 1)
+           
+        for( KycQuestionPojo question : questions){
+            
+
+            System.out.println("Number of Options of question[" +question.getQuestionId()+"] is: " + question.getOptions().size());
+
+            //Fill Label en/ar for each question
+            fillOneQuestionMainFields(question, questionTemp);             
+               
+            
+
+
+            //Loop on Options
+            for(KycOptionPojo option : question.getOptions()){
+
 
             
-            KycQuestionPojo questionPojo = questionPojos.get(index);
-            kycAddNewPage
-                    .DropdownListTypeQuestion(index2)
-                    .fillEnglishQuestion(index2, questionPojo.getLabel().getEn())
-                    .fillArabicQuestion(index2, questionPojo.getLabel().getAr());
+                //Fill Label en/ar for each option
+                addOptions(option, optionTemp);
 
 
-
-
-                  // Add options buttons
-                       for (int j = 0; j < questionPojos.get(index).getOptions().size()-1; j++) {
-                          kycAddNewPage.clickAddOptionButtonForMultiQuestions(index2);
-                           //if questions added we will update the index
-                           //i = i + 4;
-        
-                        }
-
-
-
-        
-                        // Fill options
-        
-                        if (questionPojo.getType().equals("Dropdown List")) {
-            
-                            if (questionPojo.getOptions() != null) {
                 
-                                for (KycOptionsPojo option : questionPojo.getOptions()) {
+
+                //Nested questions in Options
+                if (option.getQuestions() != null) {
                     
-                                    kycAddNewPage
+                    optionFlag = 1;
+                    questionTemp2 = questionTemp;// to fill exact options
                     
-                                    .fillEnglishOption(temp, option.getLabel().getEn())
                     
-                                    .fillArabicOption(temp, option.getLabel().getAr());
+                    clickAddNestedQuestionsInOptions(optionTemp);
+
+
+
+                    optionTemp2 = option.getQuestions().get(questionTemp - 1).getOptions().size();
+                    System.out.println("Number of options in question["+questionTemp+"] is: " + optionTemp2);
+                    
+                    
+                    optionTemp++;
+                    System.out.println("option Temp is: " + optionTemp);
+                    
+                    
+                    questionTemp++;
+                    System.out.println("question Temp is: " + questionTemp);
+                   
+                    addQuestionsPerPage(option.getQuestions());
+                }
+
+
+                if(optionFlag == 1){
+                    
+                    System.out.println("optionTemp2 before loop is: " + optionTemp2);
+                    
+                    for(int index =0 ; index < optionTemp2 ;index++){
                         
-                                    temp++;
-                                    if (questionPojo.getOptions().getQuestions().get(index2).size() > 0) {
-
-                                    }
-                                    addNewQuestion(kycQuestionsNestedPojo);
+                        addNewoption(questionTemp2);
                 
-                                }
-            
-                            } else {
-             
-                                throw new IllegalArgumentException("Options cannot be null for DropdownList type questions.");
-            
-                            }
-                        }
-                        //to add new question and appear it
-                        kycAddNewPage
-                                     .clickAddByNewInputButton()
-                                     .clickOnEyeIcon(index2);
                     }
+                    optionFlag=0;
+                }
+                
+                    else{
+                
+                        addNewoption(questionTemp);
+                
+                    }
+                    
+                optionTemp++;
+            }
+
+          
+                //addNewQuestionbutton();
+                //clickEyeIcon(questionTemp);
+                //questionTemp++;
+            
+        }    
         
-                }                    
+
+    }              
 }                

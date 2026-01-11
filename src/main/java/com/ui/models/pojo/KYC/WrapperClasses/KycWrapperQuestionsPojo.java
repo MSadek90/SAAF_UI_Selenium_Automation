@@ -3,7 +3,7 @@ import java.util.List;
 
 import com.ui.models.pojo.KYC.KycQuestionPojo;
 
-public class kycQuestionsNestedPojo {
+public class KycWrapperQuestionsPojo {
 
     protected List<KycQuestionPojo> questions;
 
@@ -18,8 +18,4 @@ public class kycQuestionsNestedPojo {
     }
 
 
-    public int size() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'size'");
-    }
 }

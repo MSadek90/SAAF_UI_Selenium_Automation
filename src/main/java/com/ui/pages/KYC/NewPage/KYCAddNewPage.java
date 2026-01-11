@@ -131,8 +131,8 @@ public class KYCAddNewPage  extends BasePage {
               click icon to open Nested Options
             */
 
-            public KYCAddNewPage clickAddNestedInOption() {
-                ClickAction.click(driver, addNestedInOption);
+            public KYCAddNewPage clickAddNestedQuestionsInOption(int index) {
+                ClickAction.clickUsingJavaScript(driver, By.xpath("(//img[@alt='nested'])["+index+"]"));
                 return this;
             }
 

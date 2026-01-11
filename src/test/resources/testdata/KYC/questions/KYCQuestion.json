@@ -1,6 +1,7 @@
 {
-    "questions": [
-        {
+    
+    "questions":[
+    {
         "questionId": "kyc_question_001",
 
         "label":{
@@ -15,7 +16,7 @@
                 "optionId":"option_001",
                 "label":{
                     "en":"Not Available",
-                    "ar":"غير متوفر"
+                    "ar":"محمود"
                 },
 
                 "questions":[
@@ -23,22 +24,25 @@
                         "questionId": "kyc_question_001_a",
                         "label": {
                             "en": "Please specify your full name",
-                            "ar": "يرجى تحديد اسمك الكامل"
+                            "ar": "محمود ايه"
                         },
-                        "type": "Text Field",
+
+                        "type":"Dropdown List",
+                        
                         "options":[
                             {
                                 "optionId":"option_001_a",
                                 "label":{
                                     "en":"Full Name",
-                                    "ar":"الاسم الكامل"
+                                    "ar":"محمود صادق"
                                 }
+                               
                             },
                             {
                                 "optionId":"option_002_a",
                                 "label":{
                                     "en":"Other",
-                                    "ar":"آخر"
+                                    "ar":"محمود السيد"
                                 }
                             }
                         ]
@@ -51,251 +55,32 @@
                 "optionId":"option_002",
                 "label":{
                     "en":"Prefer not to say",
-                    "ar":"أفضل عدم القول"
+                    "ar":"عمر"
                 }
             },
             {
                 "optionId":"option_003",
                 "label":{
                     "en":"Other",
-                    "ar":"آخر"
+                    "ar":"محمد"
                 }
             },
             {
                 "optionId":"option_004",
                 "label":{
                     "en":"Other",
-                    "ar":"آخر"
+                    "ar":"السيد"
                 }
             }
 
          ]
-        },
-        
+    }
+  ]
 
-
-
-
-
-
-        {
-            "questionId": "kyc_question_002",
-            "label": {
-                "en": "What is your date of birth?",
-                "ar": "ما هي تاريخ ميلادك؟"
-            },
-            "type": "Dropdown List",
-
-
-            "options":[
-                {
-                    "optionId":"option_001",
-                    "label":{
-                        "en":"Not Available",
-                        "ar":"غير متوفر"
-                    }
-                },
-
-                {
-                    "optionId":"option_002",
-                    "label":{
-                        "en":"Prefer not to say",
-                        "ar":"أفضل عدم القول"
-                    },
-                    "questions":[
-                        {
-                            "questionId": "kyc_question_002_a",
-                            "label": {
-                                "en": "Please specify your date of birth",
-                                "ar": "يرجى تحديد تاريخ ميلادك"
-                            },
-                            "type": "Text Field",
-                            "options":[
-                                {
-                                    "optionId":"option_001_a",
-                                    "label":{
-                                        "en":"Date of Birth",
-                                        "ar":"تاريخ الميلاد"
-                                    }
-                                },
-                                {
-                                    "optionId":"option_002_a",
-                                    "label":{
-                                        "en":"Other",
-                                        "ar":"آخر"
-                                    }
-                                },
-                                {
-                                    "optionId":"option_003_a",
-                                    "label":{
-                                        "en":"Other",
-                                        "ar":"آخر"
-                                    }
-                                },
-                                {
-                                    "optionId":"option_004_a",
-                                    "label":{
-                                        "en":"Other",
-                                        "ar":"آخر"
-                                    }
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "optionId":"option_003",
-                    "label":{
-                        "en":"Other",
-                        "ar":"آخر"
-                    }
-                },
-                {
-                    "optionId":"option_004",
-                    "label":{
-                        "en":"Other",
-                        "ar":"آخر"
-                    }
-                }
-
-             ]
-        },
-
-
-
-
-
-
-        {
-            "questionId": "kyc_question_003",
-            "label": {
-                "en": "What is your gender?",
-                "ar": "ما هو جنسك؟"
-            },
-            "type": "Dropdown List",
-
-            "options":[
-                {
-                    "optionId":"option_001",
-                    "label":{
-                        "en":"Not Available",
-                        "ar":"غير متوفر"
-                    }
-                },
-
-                {
-                    "optionId":"option_002",
-                    "label":{
-                        "en":"Prefer not to say",
-                        "ar":"أفضل عدم القول"
-                    }
-                },
-                {
-                    "optionId":"option_003",
-                    "label":{
-                        "en":"Other",
-                        "ar":"آخر"
-                    }
-                },
-                {
-                    "optionId":"option_004",
-                    "label":{
-                        "en":"Other",
-                        "ar":"آخر"
-                    }
-                }
-
-             ]
-        },
-
-
-        {
-            "questionId": "kyc_question_004",
-            "label": {
-                "en": "What is your nationality?",
-                "ar": "ما هي جنسيتك؟"
-            },
-            "type": "Dropdown List",
-
-            "options":[
-                {
-                    "optionId":"option_001",
-                    "label":{
-                        "en":"Not Available",
-                        "ar":"غير متوفر"
-                    }
-                },
-
-                {
-                    "optionId":"option_002",
-                    "label":{
-                        "en":"Prefer not to say",
-                        "ar":"أفضل عدم القول"
-                    }
-                },
-                {
-                    "optionId":"option_003",
-                    "label":{
-                        "en":"Other",
-                        "ar":"آخر"
-                    }
-                },
-                {
-                    "optionId":"option_004",
-                    "label":{
-                        "en":"Other",
-                        "ar":"آخر"
-                    }
-                }
-
-             ]
-        },
-        {
-            "questionId": "kyc_question_005",
-            "label": {
-                "en": "What is your occupation?",
-                "ar": "ما هو مهنتك؟"
-            },
-            "type": "Dropdown List",
-
-            "options":[
-                {
-                    "optionId":"option_001",
-                    "label":{
-                        "en":"Not Available",
-                        "ar":"غير متوفر"
-                    }
-                },
-
-                {
-                    "optionId":"option_002",
-                    "label":{
-                        "en":"Prefer not to say",
-                        "ar":"أفضل عدم القول"
-                    }
-                },
-                {
-                    "optionId":"option_003",
-                    "label":{
-                        "en":"Other",
-                        "ar":"آخر"
-                    }
-                },
-                {
-                    "optionId":"option_004",
-                    "label":{
-                        "en":"Other",
-                        "ar":"آخر"
-                    }
-                }
-
-             ]
-        }
-
-
-
-    ]
-    
 }
+
+
+    
+
 
 
