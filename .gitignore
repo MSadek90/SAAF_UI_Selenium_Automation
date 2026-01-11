@@ -1,10 +1,45 @@
-# Ignore VSCode AI rules
+# Ignore Copilot / Codacy instruction files
 .github/instructions/codacy.instructions.md
 
-# Ignore sensitive files
-login_testcases.json
+# Sensitive / environment files
 env.properties
+src/main/resources/env.properties
+login_testcases.json
 config/
-# Ignore build and test folders
-target/
+
+# IDE / editor
+/.idea/
+/*.iml
+/.classpath
+/.project
+/.settings/
+/.vscode/
+
+# Build / output
+/target/
+/out/
+/bin/
+/build/
 test-output/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Java artifacts
+*.class
+*.jar
+
+# Node (if present)
+node_modules/
+
+# Misc
+.env
+.env.local
+local.properties

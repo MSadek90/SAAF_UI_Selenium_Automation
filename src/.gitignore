@@ -1,4 +1,10 @@
-
-
-#Ignore vscode AI rules
-.github\instructions\codacy.instructions.md
+# Ignore VSCode AI rules
+.github/instructions/codacy.instructions.md
+.vscode
+# Ignore sensitive files
+login_testcases.json
+env.properties
+config/
+# Ignore build and test folders
+target/
+test-output/
